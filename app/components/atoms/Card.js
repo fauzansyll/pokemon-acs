@@ -79,7 +79,11 @@ const CardDetail = ({ data }) => {
     <div className={`text-black flex flex-col ${style.cardDetail}`}>
       <h2>{capitalizeFirstLetter(data.name)}</h2>
       <div className="w-full flex justify-center">
-        <img src={data.sprites.front_default} width={"300px"} alt={data.name} />
+        <Image
+          src={data.sprites.front_default}
+          width={"300px"}
+          alt={data.name}
+        />
       </div>
       <div className="flex w-full gap-2 ">
         <div className={`${style.detail} w-full p-5 text-white rounded-md`}>
