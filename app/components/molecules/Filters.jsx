@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { TextInput, SelectInput } from "./Input";
+import { TextInput, SelectInput } from "../atoms/Input";
 import {
   setSearchText,
   setSelectedAbility,

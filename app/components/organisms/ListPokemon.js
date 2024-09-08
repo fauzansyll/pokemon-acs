@@ -10,7 +10,7 @@ import {
   setCategories,
   setTypes,
 } from "../../store/actions";
-import Filters from "../atoms/Filters";
+import Filters from "../molecules/Filters";
 
 const PokemonComponent = () => {
   const dispatch = useDispatch();
