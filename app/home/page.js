@@ -1,19 +1,19 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import App from "../components/pages/App";
 import { useRouter } from "next/navigation";
 
-const page = () => {
-  const Router = useRouter();
+const Page = () => {
+  const router = useRouter();
 
   useEffect(() => {
     const status = localStorage.getItem("Status");
 
     if (status != 1) {
-      Router.push("/");
+      router.push("/");
     }
-  }, []);
+  }, [router]);
 
   return (
     <div className="relative">
@@ -22,4 +22,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
