@@ -28,9 +28,9 @@ const PokemonComponent = () => {
   } = useSelector((state) => state);
 
   const [isLoading, setIsLoading] = useState(true);
-  const apiInstance = api();
 
   useEffect(() => {
+    const apiInstance = api();
     async function fetchData() {
       // try {
       //   setIsLoading(true);
