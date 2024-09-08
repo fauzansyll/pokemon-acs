@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import style from "./Card.module.scss";
+import Image from "next/image";
 
 const Card = ({ data }) => {
   const [isActive, setIsActive] = useState(false);
@@ -18,7 +19,12 @@ const Card = ({ data }) => {
         className="bg-white rounded-md cursor-pointer hover:scale-105 transform transition-transform"
         onClick={handleCardClick}
       >
-        <img src={data.sprites.front_default} width={"300px"} alt={data.name} />
+        <Image
+          src={data.sprites.front_default}
+          width={300}
+          height={300}
+          alt={data.name}
+        />
       </div>
 
       {isActive && (
