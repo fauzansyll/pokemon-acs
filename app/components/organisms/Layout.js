@@ -5,9 +5,11 @@ import Header from "../molecules/Header";
 const Layout = ({ children }) => {
   return (
     <Fragment>
-      <Header />
-      {children}
-      <Footer />
+      <div className="px-10 py-7 md:px-28 flex flex-col gap-5">
+        <Header />
+        {children}
+        <Footer />
+      </div>
     </Fragment>
   );
 };

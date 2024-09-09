@@ -3,6 +3,7 @@ import style from "./Login.module.scss";
 import { useRouter } from "next/navigation";
 import Button from "../atoms/Button";
 import { v4 as uuidv4 } from "uuid"; // Import UUID library for generating unique user IDs
+import { TextInput } from "../atoms/Input";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -53,7 +54,7 @@ const Login = () => {
 
       localStorage.setItem("Status", 1);
       if (localStorage.getItem("Status") == 1) {
-        router.push("/inquiry");
+        router.push("/home");
       }
     } else {
       setAlert("Invalid username or password");
@@ -62,9 +63,9 @@ const Login = () => {
 
   return (
     <div className={`${style.main}`}>
-      {!changePassword ? (
+      {changePassword ? (
         <form
-          className="bg-white text-black p-5 w-2/3 rounded-md "
+          className="bg-white text-black p-5 w-1/3 rounded-md "
           onSubmit={handleLogin}
           autoComplete="off"
         >
@@ -74,7 +75,7 @@ const Login = () => {
               <p className="text-red-500 text-center text-sm">{alert}</p>
             )}
             <label>Username</label>
-            <input
+            {/* <input
               id="username"
               type="text"
               autoComplete="false"
@@ -82,13 +83,19 @@ const Login = () => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
+            /> */}
+            <TextInput
+              id={"username"}
+              type={"text"}
+              value={username}
+              onChange={setUsername}
             />
             <label>Password</label>
-            <input
-              type="password"
-              autoComplete="false"
-              onChange={(e) => setPassword(e.target.value)}
-              required
+            <TextInput
+              id={"password"}
+              type={"password"}
+              value={password}
+              onChange={setPassword}
             />
           </div>
           <div className="mt-5 flex flex-col gap-2">
@@ -100,28 +107,27 @@ const Login = () => {
         </form>
       ) : (
         <form
-          className="bg-white text-black p-5 w-2/3 rounded-md "
+          className="bg-white text-black p-5 w-1/3 rounded-md "
           onSubmit={handleChange}
           autoComplete="off"
         >
           <h1 className="text-2xl py-5 text-center">Change Password</h1>
           <div className="w-full flex flex-col gap-5">
             <label>New Username</label>
-            <input
-              id="newusername"
-              type="text"
-              autoComplete="false"
-              className="border-2 text-black border-black"
+
+            <TextInput
+              id={"newusername"}
+              type={"text"}
               value={newusername}
-              onChange={(e) => setNewUsername(e.target.value)}
+              onChange={setNewUsername}
               required
             />
             <label>New Password</label>
-            <input
-              type="password"
-              id="newpassword"
-              autoComplete="false"
-              onChange={(e) => setNewPassword(e.target.value)}
+            <TextInput
+              id={"newpassword"}
+              type={"password"}
+              value={newpassword}
+              onChange={setNewPassword}
               required
             />
           </div>

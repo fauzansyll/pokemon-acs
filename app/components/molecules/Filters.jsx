@@ -7,6 +7,7 @@ import {
   setSelectedCategory,
   selectedType,
   selectedAbi,
+  setSelectedType,
   // setSortOrder,
 } from "../../store/actions";
 
@@ -39,13 +40,6 @@ const Filters = () => {
         onChange={(value) => dispatch(setSelectedType(value))}
         defaultOption="All Types"
       />
-
-      {/* <SelectInput
-        options={["A-Z", "Z-A"]}
-        value={sortOrder}
-        onChange={(value) => dispatch(setSortOrder(value))}
-        defaultOption="Sort by Name"
-      /> */}
     </div>
   );
 };

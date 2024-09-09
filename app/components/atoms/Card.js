@@ -81,7 +81,8 @@ const CardDetail = ({ data }) => {
       <div className="w-full flex justify-center">
         <Image
           src={data.sprites.front_default}
-          width={"300px"}
+          width={300}
+          height={300}
           alt={data.name}
         />
       </div>

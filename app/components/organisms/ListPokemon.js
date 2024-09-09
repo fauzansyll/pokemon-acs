@@ -128,7 +128,7 @@ const PokemonComponent = () => {
   });
 
   return (
-    <div className="p-10 flex flex-col gap-5">
+    <div className="md:p-10 flex flex-col gap-5">
       <h1 className="text-2xl md:text-4xl">Pokémon List</h1>
       <Filters />
       <div className="flex gap-5 flex-wrap ">

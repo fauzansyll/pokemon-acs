@@ -1,13 +1,14 @@
 import React from "react";
 
-const TextInput = ({ value, onChange, placeholder }) => {
+const TextInput = ({ value, onChange, placeholder, ...props }) => {
   return (
     <input
       type="text"
       value={value}
-      className="p-2 rounded-md md:w-2/3"
+      className="p-2 rounded-md "
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
+      {...props}
     />
   );
 };
@@ -15,7 +16,7 @@ const TextInput = ({ value, onChange, placeholder }) => {
 const SelectInput = ({ options, value, onChange, defaultOption }) => {
   return (
     <select
-      className="p-2 rounded-md md:w-2/3"
+      className="p-2 rounded-md "
       value={value}
       onChange={(e) => onChange(e.target.value)}
     >
