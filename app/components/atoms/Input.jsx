@@ -5,7 +5,7 @@ const TextInput = ({ value, onChange, placeholder, ...props }) => {
     <input
       type="text"
       value={value}
-      className="p-2 rounded-md "
+      className="p-2 rounded-md border-2 border-black"
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
       {...props}
@@ -16,7 +16,7 @@ const TextInput = ({ value, onChange, placeholder, ...props }) => {
 const SelectInput = ({ options, value, onChange, defaultOption }) => {
   return (
     <select
-      className="p-2 rounded-md "
+      className="p-2 rounded-md border-2 border-black"
       value={value}
       onChange={(e) => onChange(e.target.value)}
     >

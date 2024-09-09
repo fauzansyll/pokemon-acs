@@ -14,12 +14,12 @@ const LoginList = () => {
     <div className="p-5">
       <h1 className="text-2xl mb-5">User Login Information</h1>
       {loginRecords.length > 0 ? (
-        <table className="min-w-full bg-white text-black">
+        <table className="min-w-full bg-white text-black rounded-md">
           <thead>
             <tr>
-              <th className="border px-4 py-2">User ID</th>
-              <th className="border px-4 py-2">Username</th>
-              <th className="border px-4 py-2">Login Time</th>
+              <th className="  px-4 py-2">User ID</th>
+              <th className=" px-4 py-2">Username</th>
+              <th className=" px-4 py-2">Login Time</th>
             </tr>
           </thead>
           <tbody>
@@ -33,9 +33,12 @@ const LoginList = () => {
               </tr>
             ))}
           </tbody>
+          <div className="w-full px-4 py-2  flex justify-center">
+            © 2024 Pokemon. All Rights Reserved.
+          </div>
         </table>
       ) : (
-        <p>No login records found.</p>
+        <p>Tidak ada inquiry login</p>
       )}
     </div>
   );

@@ -65,7 +65,7 @@ const Login = () => {
     <div className={`${style.main}`}>
       {changePassword ? (
         <form
-          className="bg-white text-black p-5 w-1/3 rounded-md "
+          className="bg-white text-black p-5 md:w-1/3 rounded-md "
           onSubmit={handleLogin}
           autoComplete="off"
         >
@@ -89,12 +89,14 @@ const Login = () => {
               type={"text"}
               value={username}
               onChange={setUsername}
+              placeholder={"Username"}
             />
             <label>Password</label>
             <TextInput
               id={"password"}
               type={"password"}
               value={password}
+              placeholder={"Password"}
               onChange={setPassword}
             />
           </div>
@@ -107,7 +109,7 @@ const Login = () => {
         </form>
       ) : (
         <form
-          className="bg-white text-black p-5 w-1/3 rounded-md "
+          className="bg-white text-black p-5 md:w-1/3 rounded-md "
           onSubmit={handleChange}
           autoComplete="off"
         >
@@ -120,12 +122,14 @@ const Login = () => {
               type={"text"}
               value={newusername}
               onChange={setNewUsername}
+              placeholder={"New Username"}
               required
             />
             <label>New Password</label>
             <TextInput
               id={"newpassword"}
               type={"password"}
+              placeholder={"New Password"}
               value={newpassword}
               onChange={setNewPassword}
               required
