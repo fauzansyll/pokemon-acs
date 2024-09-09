@@ -5,21 +5,24 @@ import {
   setSearchText,
   setSelectedAbility,
   setSelectedCategory,
-  selectedType,
-  selectedAbi,
   setSelectedType,
-  // setSortOrder,
+  setSortOrder,
 } from "../../store/actions";
 
 const Filters = () => {
   const dispatch = useDispatch();
   const searchText = useSelector((state) => state.searchText);
   const selectedCategory = useSelector((state) => state.selectedCategory);
+  const sortOrder = useSelector((state) => state.sortOrder);
   const selectedType = useSelector((state) => state.selectedType);
-  const selectedAbi = useSelector((state) => state.selectedAbi);
+
   const categories = useSelector((state) => state.categories);
   const types = useSelector((state) => state.types);
-  const abilities = useSelector((state) => state.ability);
+  const abilities = useSelector((state) => state.abilities);
+
+  const handleSortOrderChange = (order) => {
+    dispatch(setSortOrder(order));
+  };
 
   return (
     <div className="text-black flex flex-col md:flex-row md:w-full gap-2">
@@ -39,6 +42,13 @@ const Filters = () => {
         value={selectedType}
         onChange={(value) => dispatch(setSelectedType(value))}
         defaultOption="All Types"
+      />
+
+      <SelectInput
+        options={["A-Z", "Z-A"]}
+        value={sortOrder}
+        onChange={(value) => handleSortOrderChange(value)}
+        defaultOption="Default"
       />
     </div>
   );

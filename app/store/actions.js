@@ -45,6 +45,16 @@ export const setCategories = (categories) => ({
   payload: categories,
 });
 
+export const setSortOrder = (order) => ({
+  type: "SET_SORT_ORDER",
+  payload: order,
+});
+
+export const sortOrder = (order) => ({
+  type: "SET_ORDER",
+  payload: order,
+});
+
 export const setTypes = (types) => ({
   type: "SET_TYPES",
   payload: types,

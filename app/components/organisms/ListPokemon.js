@@ -19,7 +19,7 @@ const PokemonComponent = () => {
     searchText,
     selectedCategory,
     selectedType,
-    sortOrder,
+    setSortOrder,
     setAbility,
     abilities,
     categories,
@@ -32,36 +32,6 @@ const PokemonComponent = () => {
   useEffect(() => {
     const apiInstance = api();
     async function fetchData() {
-      // try {
-      //   setIsLoading(true);
-      //   const allPokemon = await apiInstance.getPokemon();
-      //   dispatch(setPokemonList(allPokemon));
-
-      //   const detailPromises = allPokemon.map((pokemon) =>
-      //     apiInstance.fetchData({ url: pokemon.url })
-      //   );
-
-      //   const detailsResponse = await Promise.all(detailPromises);
-      //   dispatch(setPokemonDetails(detailsResponse));
-
-      //   const uniqueCategories = [
-      //     ...new Set(
-      //       detailsResponse.map((pokemon) => pokemon.types[0]?.type.name)
-      //     ),
-      //   ];
-      //   const uniqueTypes = [
-      //     ...new Set(
-      //       detailsResponse.map((pokemon) => pokemon.types[1]?.type.name)
-      //     ),
-      //   ];
-
-      //   dispatch(setCategories(uniqueCategories));
-      //   dispatch(setTypes(uniqueTypes));
-      // } catch (error) {
-      //   console.error("Failed to fetch data", error);
-      // } finally {
-      //   setIsLoading(false);
-      // }
       setTimeout(async () => {
         try {
           setIsLoading(true);
@@ -122,7 +92,7 @@ const PokemonComponent = () => {
     );
 
   const sortedPokemon = filteredPokemon.sort((a, b) => {
-    return sortOrder === "asc"
+    return setSortOrder === "asc"
       ? a.name.localeCompare(b.name)
       : b.name.localeCompare(a.name);
   });

@@ -8,6 +8,11 @@ const initialState = {
   selectedType: "",
   categories: [],
   types: [],
+  abilities: [],
+  selectedAbility: "",
+  abi: "",
+  account: null,
+  sortOrder: "A-Z",
 };
 
 const counterReducer = (state = initialState, action) => {
@@ -26,6 +31,11 @@ const counterReducer = (state = initialState, action) => {
       return {
         ...state,
         pokemonList: action.payload,
+      };
+    case "SET_SORT_ORDER":
+      return {
+        ...state,
+        sortOrder: action.payload,
       };
     case "SET_POKEMON_DETAILS":
       return {
